@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link href="/admin-assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/admin-assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
+    <link rel="stylesheet" type="text/css" href="/admin-assets/css/forms/theme-checkbox-radio.css">
+    <link rel="stylesheet" type="text/css" href="/admin-assets/plugins/table/datatable/dt-global_style.css">
+    <link rel="stylesheet" type="text/css" href="/admin-assets/plugins/table/datatable/custom_dt_custom.css">
+    <!-- END PAGE LEVEL CUSTOM STYLES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+</head>
+    
+<body class="sidebar-noneoverflow">
+    <style>
+        #SimpleJSTree li{
+            color: black;
+        },
+          #SimpleJSTree a{
+            color: rgb(255, 0, 0) !important;
+            font-weight: bold 
+        }
+    </style>
+    <div class="d-flex justify-content-between">
+         <div id="SimpleJSTree">
+                            </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+            Add Category
+        </button>
+    </div>
+
+
+    {{!-- Add Category Modal --}}
+
+    <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form action="/admin/category/addCategory" method="post">
+                        <input id="parentName" hidden type="text" name="parent">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Category Name</label>
+                            <input type="text" class="form-control" name="text">
+                        </div>
+
+
+                        <label for="exampleInputEmail1" class="form-label">Select Parent</label>
+                        <div class="mb-3">
+                            <div id="SimpleJSTree">
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Add Category</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="/admin-assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="/admin-assets/js/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="/admin-assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/admin-assets/js/app.js"></script>
+
+
+    <script src="/admin-assets/js/custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+
+
+    <script>
+
+        window.onload = function () {
+            jQuery.ajax({
+                url: "/admin/category",
+                type: 'POST',
+                success: function (data) {
+
+                    data.forEach((value) => {
+                        if (value.parent == 0) {
+                            value.parent = "#"
+                        }
+                    })
+                    let jsondata = data
+                    console.log(jsondata)
+
+
+
+                    $(function () {
+
+
+                    createJSTree(jsondata);
+                    });
+
+
+                    function createJSTree(jsondata) {
+
+                        $('#SimpleJSTree').jstree({
+                            'core': {
+                                "multiple": false,
+                                'data': jsondata,
+                                "themes": {
+                                    "icons": false
+                                },
+
+
+                            },
+                            "checkbox": {
+                                'deselect_all': true,
+                                'three_state': false,
+                            },
+                            "plugins": ["checkbox"],
+
+                        });
+
+                        return jsondata
+
+                    }
+
+
+                },
+                error: function () {
+                    console.log('error')
+                }
+            })
+        };
+
+
+        $('#SimpleJSTree').on("changed.jstree", function (e, data) {
+            let parentName = document.getElementById('parentName')
+            parentName.value = data.selected
+        })
+
+    </script>
+</body>
+
+
+</html>

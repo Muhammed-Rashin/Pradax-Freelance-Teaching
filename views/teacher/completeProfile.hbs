@@ -1,0 +1,388 @@
+<link rel="shortcut icon" href="favicons/.-5172-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap"
+    rel="stylesheet">
+
+
+
+
+<form class="upload-form text-white" action="/teacher/completeProfile" method="post" enctype="multipart/form-data">
+    {{!-- Personal information section --}}
+
+    <section class="pt-120 pb-120" id="first">
+        <div class="container">
+            <div class="row">
+
+                <div class="section-title text-white text-center" style="width:100% !important ;">
+                    <h2>Complete Teacher Profile</h2>
+                </div>
+                </di>
+            </div>
+            <div id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active">Personal Details</li>
+                    <li>Professional Details</li>
+                    {{!-- <li>Account Setup</li> --}}
+                </ul>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center mb-5">
+
+                                <h3>Personal Information</h3>
+                                <p>Tell us a bit about yourself. This information will appear on your <br> public
+                                    profile, so that potential students can get to know you better.</p>
+                            </div>
+                            <div class="upload-info ">
+
+                                <div class="form-group"><label for="name">Full Name</label>
+                                    <div class=" d-flex">
+
+                                        <input type="text" class="form-control w-50 me-5" id="name"
+                                            placeholder="First Name " name="firstName">
+                                        <input type="text" class="form-control w-50" id="name" placeholder="Last Name"
+                                            name="lastName">
+                                    </div>
+
+                                    <div class="dropzone-wrap mt-5">
+                                        <label for="name">Profile Picture</label>
+                                        <p>Add a profile picture of yourself so students will know exactly who
+                                            they’ll
+                                            be learning with.</p>
+                                        <div  class="dropzone-round"><input type="file" id="choose-file"
+                                                 name="profileImg">
+                                            <span class="upload-btn"><img src="images/icons-plus.svg" class="svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="row justify-content-between"><label for="description"
+                                            class="col-md-5">Description</label></div>
+                                    <textarea id="description" class="form-control"
+                                        placeholder="Share a bit about your work experience and your area of expertise."
+                                        name="description"></textarea>
+                                </div>
+
+                                <div class="form-group d-flex justify-content-end pt-2 mb-0"><a href="#top"><button
+                                            onclick="next()" class="btn" type="button">
+                                            Next</button></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="pt-120 pb-120" id="second" hidden>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="section-title text-white text-center" style="width:100% !important ;">
+                    <h2>Complete Teacher Profile</h2>
+                </div>
+                </di>
+            </div>
+            <div id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active">Personal Details</li>
+                    <li class="active">Professional Details</li>
+                    {{!-- <li>Account Setup</li> --}}
+                </ul>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+
+                    {{!-- <form action="#" class="upload-form text-white"> --}}
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center mb-5">
+
+                                    <h3>Professional Information</h3>
+                                    <p>This is your time to shine. Let potential students know what you do best <br> and
+                                        how
+                                        you gained your skills, certifications and experience.</p>
+                                </div>
+                                <div class="upload-info">
+
+                                    <div class="form-group"><label for="name">Your Occupation</label>
+                                        <div class=" d-flex">
+
+                                            <input type="text" style="width: 35%;" class="form-control me-5" id="name"
+                                                placeholder="Eg. Teacher " name="occupation">
+                                            <div class="me-3" style="width:18% ;">
+
+                                                <select id="collection" class="form-control" name="skillLevels">
+                                                    <option disabled selected hidden value="">From</option>
+
+                                                    <option value="2022">2022</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2020">2020</option>
+                                                </select>
+                                            </div>
+                                            <label for="">to</label>
+                                            <div class="ms-3" style="width:18% ;">
+
+                                                <select id="collection" class="form-control" name="to">
+                                                    <option disabled selected hidden value="">To
+                                                    </option>
+
+                                                    <option value="2022">2022</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2020">2020</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group"><label for="name">Skills</label>
+                                    <div id="add-skill-div">
+                                        <div class=" d-flex" id="main-div">
+
+                                            <input type="text" style="width: 35%;" class="form-control me-5" id="name"
+                                                name="reqSkills" placeholder="Eg. Chemistry">
+
+                                            <div style="width: 26%;
+">
+
+                                                <select id="collection" class="form-control" style="width: 18%;"
+                                                    name="reqSkills">
+                                                    <option disabled selected hidden value="">Choose Level</option>
+
+                                                    <option value="25">Beginner</option>
+                                                    <option value="50">Intermediate</option>
+                                                    <option value="100">Expert</option>
+                                                </select>
+                                            </div>
+
+
+
+                                            {{!-- <img src="/teacher/images/plus-icon.svg"
+                                                style="width: 3%; height:0%; color:red" alt=""> --}}
+                                        </div>
+
+                                    </div>
+
+                                    <div>
+                                        <button onclick="addSkills()" type="button" class="btn"
+                                            style="    width: 0%;border-radius: 51px;background: transparent;font-size: 18px;height: 56px;color: green;margin-left: 29%;margin-top: -3%;text-transform: none;">Add
+                                            new</button>
+
+                                        <div class="form-group">
+                                            <label for="name">Education</label>
+                                            <select id="collection" class="form-control" name="education">
+                                                <option disabled selected hidden value="select_collection">Education
+                                                </option>
+
+                                                <option value="Higher Seconday">Higher Seconday</option>
+                                                <option value="High School">High School</option>
+                                                <option value="B-Tech">B-Tech</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label class=" mt-5" for="name">Certificates</label>
+                                        <p>Include any certificates or awards that are relevant to the Subject you're
+                                            offering.</p>
+                                        <div class="dropzone"><input type="file" name="certificate"
+                                                style="cursor: pointer;"> <span class="upload-btn text-center"><img
+                                                    src="images/icons-plus.svg" class="svg" alt=""></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex justify-content-end pt-2 mb-0" style="margin-top:10% ;">
+                                <a href="#top"> <button class="btn me-3 mb-5" type="button"
+                                        onclick="back()">Back</button></a>
+                                <button class="btn mb-5 me-5" type="submit">Submit</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+</form>
+</section>
+{{!-- <footer class="footer">
+    <div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-sm-6">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget_title">My Account</h4>
+                        <ul>
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="author.html">Author</a></li>
+                            <li><a href="collection.html">My Collections</a></li>
+                            <li><a href="author.html">Settings</a></li>
+                            <li><a href="activity.html">Activity</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget_title">Marketplace</h4>
+                        <div class="footer-list-wrap">
+                            <ul>
+                                <li><a href="explore.html">All NFTs</a></li>
+                                <li><a href="explore.html">Trading Paint</a></li>
+                                <li><a href="explore.html">Art Painting</a></li>
+                                <li><a href="explore.html">Virtual Paints</a></li>
+                                <li><a href="explore.html">Collectibles</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="contact.html">Terms of Service</a></li>
+                                <li><a href="contact.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="widget widget_newsletter">
+                        <h4 class="widget_title">Newsletter</h4>
+                        <form
+                            action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&amp;id=f4e0e93d1d"
+                            class="newslatter-form">
+                            <div class="theme-input-group"><input class="form-control" type="email"
+                                    placeholder="Enter Your Email..."> <button type="submit" class="submit-btn btn"><img
+                                        src="images/icons-mail.svg" alt="" class="svg">
+                                    Signup Now</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-sm-6">
+                    <div class="widget text-center text-white widget_about"><img src="images/img-footer-logo-light.svg"
+                            alt="" class="svg footer-logo">
+                        <p>The anefty first large digital marketplace crypto collectibles &amp; non fungible token
+                            buy sell &amp; discover digital assets.</p>
+                        <div class="socials d-flex justify-content-center align-items-center"><a
+                                href="https://www.twitter.com/" target="_blank"><img
+                                    src="images/icons-twitter-round.svg" alt="" class="svg"></a><a
+                                href="https://www.instagram.com/" target="_blank"><img
+                                    src="images/icons-instagram-round.svg" alt="" class="svg"></a><a
+                                href="https://www.pinterest.com/" target="_blank"><img src="images/icons-pinterest.svg"
+                                    alt="" class="svg"></a><a href="https://www.whatsapp.com/" target="_blank"><img
+                                    src="images/icons-whatsapp.svg" alt="" class="svg"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright-content text-center text-white">© 2018 - <span class="currentYear">2022</span>
+                        <a href="https://www.themelooks.com/" class="text-white">Themelooks</a> Networks, Inc. All Right
+                        Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><a href="#" class="back-to-top"><i class="fas fa-long-arrow-alt-up"></i></a> --}}
+
+<style>
+    #img-preview img {
+        width: 100%;
+        height: auto;
+        display: block;
+
+    }
+</style>
+
+<script>
+
+    const first = document.getElementById('first')
+    const second = document.getElementById('second')
+    function next() {
+
+        second.removeAttribute('hidden');
+        first.setAttribute('hidden', '');
+
+
+    }
+    function back() {
+        first.removeAttribute('hidden');
+        second.setAttribute('hidden', '');
+
+    }
+
+
+    function addSkills() {
+        const addSkillDiv = document.getElementById('add-skill-div')
+        /*const skillDiv = document.createElement('div') 
+        const skill = document.createElement('input') 
+        const skill2 = document.createElement('select') 
+        const option = document.createElement('option')
+        const option2 = document.createElement('option')
+        const option3 = document.createElement('option')
+        option.text = 'Beginner'
+        skill2.add(option)
+        option2.text = 'Intermediate'
+        skill2.add(option2)
+         option3.text = 'Expert'
+        skill2.add(option3)
+
+        skillDiv.classList.add('d-flex')
+        skill.setAttribute('name','skills')
+        skill2.setAttribute('name','skillLevles')
+        skill.classList.add("form-control","me-5");
+        skill.style.width = '35%';
+        skill2.style.width = '11%';
+
+        skill2.classList.add("form-control");
+
+
+
+        skillDiv.appendChild(skill)
+        skillDiv.appendChild(skill2)
+
+
+
+        addSkillDiv.appendChild(skillDiv)*/
+
+        let menu = document.querySelector('#main-div');
+        let clonedMenu = menu.cloneNode(true);
+        clonedMenu.id = 'menu-mobile';
+        addSkillDiv.appendChild(clonedMenu);
+    }
+
+
+
+    const chooseFile = document.getElementById("choose-file");
+    const imgPreview = document.getElementById("img-preview");
+    chooseFile.addEventListener("change", function () {
+        getImgData();
+    });
+
+    function getImgData() {
+        const files = chooseFile.files[0];
+        if (files) {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(files);
+            fileReader.addEventListener("load", function () {
+                imgPreview.style.display = "block";
+                imgPreview.innerHTML = '<img src="' + this.result + '" />';
+            });
+        }
+    }
+</script>

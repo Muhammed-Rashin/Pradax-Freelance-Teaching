@@ -1,0 +1,560 @@
+<header class="header">
+  <div class="header-main style--three love-sticky">
+    <div class="container">
+      <div class="header-inner position-relative px-0 mt-0 bg-transparent">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-md-6 col-sm-9 col-6">
+            <div class="d-flex align-items-center">
+              <div class="logo">
+                <a href="index.html" class="text-white" style="font-size: 20px;">Pradax</a>
+              </div>
+              <form class="search-form d-none d-sm-block ms-4" action="#">
+                <div class="form-group">
+                  <button type="submit">
+                    <img src="images/icons-search-gradient.svg" class="svg" alt="" />
+                  </button>
+                  <input type="text" class="form-control mb-0" placeholder="Search item…" />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6 col-sm-3 col-6 d-flex align-items-center justify-content-end position-static">
+            <div class="nav-wrapper d-flex align-items-center">
+              <div class="nav-wrap-inner">
+                <ul class="nav">
+                  <li>
+                    <a href="#">Home</a>
+                    <ul class="sub-menu">
+                      <li><a href="index.html">Home V1</a></li>
+                      <li><a href="home-v2.html">Home V2</a></li>
+                      <li><a href="home-v3.html">Home V3</a></li>
+                      <li><a href="home-v4.html">Home V4</a></li>
+                      <li><a href="home-v5.html">Home V5</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Explore</a>
+                    <ul class="sub-menu">
+                      <li><a href="explore.html">Explore</a></li>
+                      <li><a href="profile.html">Profile</a></li>
+                      <li><a href="create.html">Create</a></li>
+                      <li><a href="wallet.html">Wallet</a></li>
+                      <li><a href="help-center.html">Help Center</a></li>
+                    </ul>
+                  </li>
+                  <li class="current-menu-parent">
+                    <a href="#">Pages</a>
+                    <ul class="sub-menu">
+                      <li><a href="author.html">Author</a></li>
+                      <li><a href="ranking.html">ranking</a></li>
+                      <li><a href="collection.html">Collection</a></li>
+                      <li class="current-menu-children">
+                        <a href="item-details.html">Item Details</a>
+                      </li>
+                      <li><a href="activity.html">Activity</a></li>
+                      <li><a href="upload.html">Upload</a></li>
+                      <li><a href="profile-edit.html">Profile Edit</a></li>
+                      <li><a href="login.html">Login</a></li>
+                      <li><a href="register.html">Register</a></li>
+                      <li><a href="404.html">404</a></li>
+                      <li><a href="coming-soon.html">Coming Soon</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Blog</a>
+                    <ul class="sub-menu">
+                      <li><a href="blog.html">Blog</a></li>
+                      <li><a href="blog-details.html">Blog Details</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="dropdown ms-3">
+                  <a href="#" class="user-avatar dropdown-toggle" data-bs-toggle="dropdown"><img
+                      src="images/media-user.png" alt="" />
+                    <span class="user-status"><img src="images/icons-check.svg" class="svg" alt="" /></span></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="profile.html"><img src="images/icons-profile.svg" alt="" />
+                        Profile</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="create.html"><img src="images/icons-create.svg" alt="" />
+                        Create</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="collection.html"><img src="images/icons-collection.svg" alt="" />
+                        Collection</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="wallet.html"><img src="images/icons-wallet.svg" alt="" />
+                        Wallet</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="explore.html"><img src="images/icons-explore.svg" alt="" />
+                        Explore</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="author-area">
+  <div class="author-cover" data-bg-img="/classroom/bannerImages/{{response.bannerImage}}"></div>
+</div>
+<section class="pt-120 pb-120">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-lg-6 order-1 order-lg-0">
+        <div class="item-details ov-hidden">
+          <a style="color: #ff0076; font-size: 18px;">{{response.category}} > {{response.subCategory}}|
+            {{#each response.topics}}
+            {{/each}}
+          </a>
+          <h2 class="product-title mt-5">{{response.title}}</h2>
+
+          <div id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/classroom/thumbnails/{{response.thumbnailImage1}}" class="d-block w-100" alt="..."
+                  style="height: 355px;">
+              </div>
+              <div class="carousel-item">
+                <img src="/classroom/thumbnails/{{response.thumbnailImage2}}" class="d-block w-100" alt="..."
+                  style="height: 355px;">
+              </div>
+              <div class="carousel-item">
+                <img src="/classroom/thumbnails/{{response.thumbnailImage3}}" class="d-block w-100" alt="..."
+                  style="height: 355px;">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <div class="favorites">
+            <h6 class="available">Available 12</h6>
+            <div class="love-react-wrap d-flex align-items-center">
+              <div class="love-react style--two"></div>
+              <div class="love-count">13.6k</div>
+            </div>
+          </div>
+
+          <h3 class="mb-3">About This Class</h3>
+          <p>
+            {{response.description}}
+          </p>
+
+          <h3 class="mb-5 mt-5">About This Teacher</h3>
+          <div class="d-flex justify-content-arund mb-3">
+            <img class="rounded-circle" src="/teacher/uploadImages/profileImages/{{response.teacherId.profileImage}}"
+              alt="">
+            <h5 class="mt-4 ms-4 text-decoration-underline" style="color: #ff0076;">{{response.teacherId.firstName}}
+              {{response.teacherId.lastName}}</h5>
+          </div>
+
+          <div class="row pt-1">
+            <div class="col-sm-6">
+              <div class="price mb-4 mb-sm-0">
+                <h6>Education</h6>
+                <h3>{{response.teacherId.education}}</h3>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="countdown-wrapper">
+
+                <h6>Occupation</h6>
+                <h3>{{response.teacherId.occupation}}</h3>
+              </div>
+
+            </div>
+          </div>
+          <p class="mt-5">
+            {{response.teacherId.description}}
+          </p>
+
+
+
+
+        </div>
+      </div>
+      <div class="col-xl-5 col-lg-6 order-0 order-lg-1">
+        <div class="item-details-img mb-5 mb-lg-0 item-details ov-hidden">
+          <ul class="nav tab-buttons style--two d-flex justify-content-between">
+            <li>
+              <button style="font-size: 20px; font-weight: bold;" class="active" data-bs-toggle="tab"
+                data-bs-target="#info">
+                Basic <br>
+                (₹{{response.basicPlan.fees}})
+              </button>
+            </li>
+            <li>
+              <button style="font-size: 20px; font-weight: bold;" data-bs-toggle="tab" data-bs-target="#bids">
+                Standard <br>
+                (₹{{response.standardPlan.fees}})
+              </button>
+            </li>
+            <li>
+              <button style="font-size: 20px; font-weight: bold;" data-bs-toggle="tab" data-bs-target="#premium">
+                Premium <br>
+                (₹{{response.premiumPlan.fees}})
+              </button>
+            </li>
+          </ul>
+
+
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="info">
+              <ul class="info-list">
+                <li>
+                  <h6>Class Days</h6>
+
+                  <h5>
+                    {{#each response.basicPlan.activeDays}}
+                    {{this}},
+                    {{/each}}
+                  </h5>
+                </li>
+                <li>
+                  <h6>Class Duration</h6>
+                  <h5>{{response.basicPlan.hours}}:{{response.basicPlan.minuts}} Hour</h5>
+                </li>
+                <li class="mb-4">
+                  <h6>Extra Features</h6>
+                  {{#if response.basicPlan.chatSupport}}
+                  <div class="d-flex">
+                    <p class="me-4">Chat Support</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.basicPlan.exclusiveClass}}
+                  <div class="d-flex">
+                    <p class="me-4">Exclusive Class</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.basicPlan.studyMetriels}}
+                  <div class="d-flex">
+                    <p class="me-4">Study Metriels</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.basicPlan.Certificate}}
+                  <div class="d-flex mb-0">
+                    <p class="me-4 mb-0">Certificate</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+                </li>
+                <li class="mt-0">
+                  <h6>Description</h6>
+                  <p>{{response.basicPlan.description}}</p>
+                </li>
+              </ul>
+              <input hidden type="text" id="idDummy" value="{{response._id}}">
+              <button class="btn mt-4 w-100" onclick="doPayments('Basic')">Continue(₹{{response.basicPlan.fees}})</button>
+            </div>
+
+
+            <div class="tab-pane fade" id="bids">
+              <ul class="info-list">
+                <li>
+                  <h6>Class Days</h6>
+
+                  <h5>
+                    {{#each response.standardPlan.activeDays}}
+                    {{this}},
+                    {{/each}}
+                  </h5>
+                </li>
+                <li>
+                  <h6>Class Duration</h6>
+                  <h5>{{response.standardPlan.hours}}:{{response.standardPlan.minuts}} Hour</h5>
+                </li>
+                <li class="mb-1">
+                  <h6>Extra Features</h6>
+                  {{#if response.standardPlan.chatSupport}}
+                  <div class="d-flex">
+                    <p class="me-4">Chat Support</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.standardPlan.exclusiveClass}}
+                  <div class="d-flex">
+                    <p class="me-4">Exclusive Class</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.standardPlan.studyMetriels}}
+                  <div class="d-flex">
+                    <p class="me-4">Study Metriels</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.standardPlan.Certificate}}
+                  <div class="d-flex">
+                    <p class="me-4">Certificate</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+                </li>
+                <li>
+                  <h6>Description</h6>
+                  <p>{{response.standardPlan.description}}</p>
+                </li>
+              </ul>
+              <button class="btn mt-4 w-100" onclick="doPayments('Standard')">Continue(₹{{response.standardPlan.fees}})</button>
+
+            </div>
+
+
+            <div class="tab-pane fade" id="premium">
+              <ul class="info-list">
+                <li>
+                  <h6>Class Days</h6>
+
+                  <h5>
+                    {{#each response.premiumPlan.activeDays}}
+                    {{this}},
+                    {{/each}}
+                  </h5>
+                </li>
+                <li>
+                  <h6>Class Duration</h6>
+                  <h5>{{response.premiumPlan.hours}}:{{response.premiumPlan.minuts}} Hour</h5>
+                </li>
+                <li class="mb-1">
+                  <h6>Extra Features</h6>
+                  {{#if response.premiumPlan.chatSupport}}
+                  <div class="d-flex">
+                    <p class="me-4">Chat Support</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.premiumPlan.exclusiveClass}}
+                  <div class="d-flex">
+                    <p class="me-4">Exclusive Class</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.premiumPlan.studyMetriels}}
+                  <div class="d-flex">
+                    <p class="me-4">Study Metriels</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+
+                  {{#if response.premiumPlan.Certificate}}
+                  <div class="d-flex">
+                    <p class="me-4">Certificate</p>
+                    <img src="/student/images/right.png" alt="" style="width:20px ; height:20px ;">
+                  </div>
+                  {{/if}}
+                </li>
+                <li>
+                  <h6>Description</h6>
+                  <p>{{response.premiumPlan.description}}</p>
+                </li>
+              </ul>
+              <button class="btn mt-4 w-100" onclick="doPayments('Premium')">Continue(₹{{response.premiumPlan.fees}})</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-2 col-sm-6">
+          <div class="widget widget_nav_menu">
+            <h4 class="widget_title">My Account</h4>
+            <ul>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="author.html">Author</a></li>
+              <li><a href="collection.html">My Collections</a></li>
+              <li><a href="author.html">Settings</a></li>
+              <li><a href="activity.html">Activity</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <div class="widget widget_nav_menu">
+            <h4 class="widget_title">Marketplace</h4>
+            <div class="footer-list-wrap">
+              <ul>
+                <li><a href="explore.html">All NFTs</a></li>
+                <li><a href="explore.html">Trading Paint</a></li>
+                <li><a href="explore.html">Art Painting</a></li>
+                <li><a href="explore.html">Virtual Paints</a></li>
+                <li><a href="explore.html">Collectibles</a></li>
+              </ul>
+              <ul>
+                <li><a href="contact.html">Terms of Service</a></li>
+                <li><a href="contact.html">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <div class="widget widget_newsletter">
+            <h4 class="widget_title">Newsletter</h4>
+            <form
+              action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&amp;id=f4e0e93d1d"
+              class="newslatter-form">
+              <div class="theme-input-group">
+                <input class="form-control" type="email" placeholder="Enter Your Email..." />
+                <button type="submit" class="submit-btn btn">
+                  <img src="images/icons-mail.svg" alt="" class="svg" />
+                  Signup Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-6">
+          <div class="widget text-center text-white widget_about">
+            <h2 class="text-white" href="">Pradax</h2>
+            <p>
+              The Pradax first large digital marketplace crypto collectibles
+              &amp; non fungible token buy sell &amp; discover digital
+              assets.
+            </p>
+            <div class="socials d-flex justify-content-center align-items-center">
+              <a href="https://www.twitter.com/" target="_blank"><img src="images/icons-twitter-round.svg" alt=""
+                  class="svg" /></a><a href="https://www.instagram.com/" target="_blank"><img
+                  src="images/icons-instagram-round.svg" alt="" class="svg" /></a><a href="https://www.pinterest.com/"
+                target="_blank"><img src="images/icons-pinterest.svg" alt="" class="svg" /></a><a
+                href="https://www.whatsapp.com/" target="_blank"><img src="images/icons-whatsapp.svg" alt=""
+                  class="svg" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="copyright-content text-center text-white">
+            © 2018 - <span class="currentYear">2022</span>
+            <a href="https://www.themelooks.com/" class="text-white">Themelooks</a>
+            Networks, Inc. All Right Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="#" class="back-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
+
+
+<script>
+  let classPlan;
+  function doPayments(plan) {
+    classPlan = plan
+    let id = document.getElementById('idDummy').value
+    console.log(id)
+    jQuery.ajax({
+      url: "/student/payment?id=" + id,
+      data:{
+        plan
+      } ,
+      type: 'POST',
+      success: function (data) {
+        console.log('success')
+        razorpayPayment(data)
+      },
+      error: function () {
+        console.log('error')
+      }
+    })
+  }
+    function razorpayPayment(order) {
+      var options = {
+        "key": "rzp_test_ufs4JercwrIpt3",
+        "amount": order.amount,
+        "currency": "INR",
+        "name": "Pradax",
+        "description": "Test Transaction",
+        "image": "https://example.com/your_logo",
+        "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+        "prefill": {
+          "name": "Gaurav Kumar",
+          "email": "gaurav.kumar@example.com",
+          "contact": "9999999999"
+        },
+        "handler": function (response,order) {
+          
+
+          verifyPayment(response)
+        },
+        "notes": {
+          "address": "Razorpay Corporate Office"
+        },
+        "theme": {
+          "color": "#3399cc"
+        },
+
+
+      };
+             var rzp1 = new Razorpay(options);
+               rzp1.open();
+
+    }
+
+    function verifyPayment(payment, order) {
+      jQuery.ajax({
+        url: "/student/verify-payment",
+        data: {
+          payment,
+          order,
+          classPlan,
+        },
+        type: 'POST',
+        success: function (data) {
+          razorpayPayment(data)
+        },
+        error: function () {
+          console.log('error')
+        }
+      })
+    }
+  
+</script>

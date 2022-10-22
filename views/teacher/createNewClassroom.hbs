@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pradax</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="favicons/.-5172-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/css-all.min.css">
+    <link rel="stylesheet" href="css/css-bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper-swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/magnific-popup-magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select-nice-select.css">
+    <link rel="stylesheet" href="css/css-style.css">
+    <link rel="stylesheet" href="css/css-custom.css">
+
+
+</head>
+
+<body>
+    
+    <div class="author-area">
+        <div class="author-cover" data-bg-img="/teacher/images/teacherFrontonCamara.jpg"></div>
+        <section class="pt-120 pb-120">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="section-title text-white">
+                            <h2>Create New Classroom</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <form action="/teacher/createClassroom" method="post" enctype="multipart/form-data" class="upload-form text-white">
+               
+
+
+                            <div class="card mb-5">
+                                <div class="card-body">
+                                    <div class="upload-info">
+                                        <h3>Overview</h3>
+
+                                        <div class="form-group"><label for="name">Classroom Title</label> <input
+                                                type="text" class="form-control" id="name"
+                                                placeholder="I will teach you something very well" name="title">
+                                        </div>
+                                        <div class="form-group"><label for="external-url">Catagory</label>
+
+                                            <input list="brow" placeholder="Select Category" id="main-category"
+                                                class="search-input form-control w-50" onkeyup="listSubCategory()" name="category">
+                                            <datalist id="brow">
+
+                                            </datalist>
+
+                                        </div>
+
+                                        <div id="sub-div" class="form-group" hidden><label for="external-url">Sub
+                                                Catagory</label>
+
+
+                                            <input list="sub" placeholder="Select Sub Category" id="sub-category"
+                                                onkeyup="listTopics()" class="search-input form-control w-50" name="subCategory">
+                                            <datalist id="sub">
+
+                                            </datalist>
+                                        </div>
+                                        <div hidden>
+
+                                        <div id="topic"
+                                            class="form-check mt-3 col-6 col-lg-2 d-flex justify-content-center">
+                                            <input type="checkbox" class="form-check-input" style="cursor: pointer;" name="topics" />
+                                            <label class="form-check-label" for="anime" >Monday</label>
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label id="topicLabel" hidden for="external-url">Select Topics</label>
+                                            <div class="container">
+                                                <div id="add-topic-div" class="row ">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                            <label>Description</label>
+                                            <div class="form-group">
+                                                <div class="row justify-content-between"><label for="description"
+                                                        class="col-md-5"></label> <span
+                                                        class="info col-md-7 d-flex justify-content-md-end mb-3 mb-lg-0">The
+                                                        Description will be include on the class details page</span>
+                                                </div>
+                                                <textarea id="description" class="form-control"
+                                                    placeholder="Briefly Describe about your class" name="description"></textarea>
+
+
+                                </div>
+                                    </div>
+                                </div>
+                                </div>
+ 
+
+                                <div class="card mb-5">
+                                    <div class="card-body">
+                                        <div class="upload-info">
+                                            <h3>Pricing</h3>
+
+                                            <div class="p-5 rounded mb-5">
+                                                <!-- Lined tabs -->
+                                                <ul id="myTab2" role="tablist"
+                                                    class="nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center"
+                                                    style="cursor: pointer;">
+                                                    <li class="nav-item flex-sm-fill">
+                                                        <a onclick="next1()" id="basic-li" data-toggle="tab" role="tab"
+                                                            aria-controls="home2" aria-selected="true"
+                                                            class="nav-link tex text-uppercase font-weight-bold mr-sm-3 rounded-0 active ">basic</a>
+                                                    </li>
+                                                    <li class="nav-item flex-sm-fill">
+                                                        <a onclick="next2()" id="standard-li" data-toggle="tab"
+                                                            role="tab" aria-controls="profile2" aria-selected="false"
+                                                            class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0">standard</a>
+                                                    </li>
+                                                    <li class="nav-item flex-sm-fill">
+                                                        <a onclick="next3()" id="premium-li" data-toggle="tab"
+                                                            role="tab" aria-controls="contact2" aria-selected="false"
+                                                            class="nav-link text-uppercase font-weight-bold rounded-0">premium</a>
+                                                    </li>
+                                                </ul>
+                                                <div id="myTabContent" class="tab-content">
+                                                    <div id="basic" role="tabpanel" aria-labelledby="home-tab"
+                                                        class="tab-pane fade px-4 py-5 show active">
+                                                        <div class="form-group"><label for="fees">Fees/Month</label>
+                                                            {{!-- <p style="position:absolute ;">₹</p> --}}
+                                                            <input type="number" class="form-control" id="fees" name="basicFees"
+                                                                placeholder="₹999">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="checkbox">Timetable</label>
+
+                                                           <div class="form-check mt-3">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="basicDays" value="Monday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Monday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="basicDays" value="Tuesday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Tuesday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="basicDays" value="Wednesday" />
+                                                                <label class="form-check-label"
+                                                                    for="disabled">Wednesday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="basicDays" value="Thursday" />
+                                                                <label class="form-check-label"
+                                                                    for="disabled-checked">Thursday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="basicDays" value="Friday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Friday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="basicDays" value="Saturday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Saturday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="basicDays" value="Sunday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Sunday</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group"><label for="name">Daily Class
+                                                                Duration</label>
+                                                            <div class=" d-flex">
+
+                                                                <input type="text" class="form-control me-2" id="name"
+                                                                    placeholder="Hours" name="basicHours">
+                                                                <input type="text" class="form-control" id="name"
+                                                                    placeholder="Minuts " name="basicMinuts">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <section class="app">
+                                                            <h3 class="gray-color">Extra Features</h3>
+                                                            <article class="feature1">
+                                                                <input type="checkbox" id="feature1" name="basicChat" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Chat Support
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature2">
+                                                                <input type="checkbox" id="feature2" name="basicExclusiveClass" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Exclusive Classes
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature3">
+                                                                <input type="checkbox" id="feature3" name="basicStudyMetriels" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Study Metriels
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature4">
+                                                                <input type="checkbox" id="feature4" name="basicCertificates" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Certificates
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                        </section>
+
+                                                        <div class="form-group">
+                                                            <div class="row justify-content-between"><label
+                                                                    for="description"
+                                                                    class="col-md-5">Description</label>
+                                                            </div>
+                                                            <textarea id="description" class="form-control" name="basicDescription"
+                                                                placeholder="Provide a detailed description of your Basic Plan"></textarea>
+                                                        </div>
+
+
+
+
+
+                                                    </div>
+                                                    <div id="standard" role="tabpanel" aria-labelledby="profile-tab"
+                                                        class="tab-pane fade px-4 py-5">
+                                                        <div class="form-group"><label for="fees">Fees/Month</label>
+                                                            {{!-- <p style="position:absolute ;">₹</p> --}}
+                                                            <input type="number" class="form-control" id="fees" name="standardFees"
+                                                                placeholder="₹999">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="checkbox">Timetable</label>
+
+                                                            <div
+                                                                class="form-check mt-3">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="standardDays" value="Monday" />
+                                                                <label class="form-check-label"
+                                                                    for="anime">Monday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="standardDays" value="Tuesday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Tuesday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="standardDays" value="Wednesday" />
+                                                                <label class="form-check-label"
+                                                                    for="disabled">Wednesday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="standardDays" value="Thursday" />
+                                                                <label class="form-check-label"
+                                                                    for="disabled-checked">Thursday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="standardDays" value="Friday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Friday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="standardDays" value="Saturday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Saturday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="standardDays" value="Sunday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Sunday</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group"><label for="name">Daily Class
+                                                                Duration</label>
+                                                            <div class=" d-flex">
+
+                                                                <input type="text" class="form-control me-2" id="name"
+                                                                    placeholder="Hours" name="standardHours">
+                                                                <input type="text" class="form-control" id="name"
+                                                                    placeholder="Minuts " name="standardMinuts">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <section class="app">
+                                                            <h3 class="gray-color">Extra Features</h3>
+                                                            <article class="feature1">
+                                                                <input type="checkbox" id="feature1" name="standardChat"  value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Chat Support
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature2">
+                                                                <input type="checkbox" id="feature2" name="standardExclusiveClass" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Exclusive Classes
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature3">
+                                                                <input type="checkbox" id="feature3" name="standardStudyMetriels" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Study Metriels
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature4">
+                                                                <input type="checkbox" id="feature4" name="standardCertificates" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Certificates
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                        </section>
+
+                                                        <div class="form-group">
+                                                            <div class="row justify-content-between"><label
+                                                                    for="description"
+                                                                    class="col-md-5">Description</label>
+                                                            </div>
+                                                            <textarea id="description" class="form-control" name="standardDescription"
+                                                                placeholder="Provide a detailed description of your Standard Plan"></textarea>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div id="premium" role="tabpanel" aria-labelledby="contact-tab"
+                                                        class="tab-pane fade px-4 py-5">
+                                                        <div class="form-group"><label for="fees">Fees/Month</label>
+                                                            {{!-- <p style="position:absolute ;">₹</p> --}}
+                                                            <input type="number" class="form-control" id="fees" name="premiumFees"
+                                                                placeholder="₹999">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="checkbox">Timetable</label>
+
+                                                            <div
+                                                                class="form-check mt-3">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="premiumDays" value="Monday" />
+                                                                <label class="form-check-label"
+                                                                    for="anime">Monday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="premiumDays" value="Tuesday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Tuesday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="premiumDays" value="Wednesday" />
+                                                                <label class="form-check-label"
+                                                                    for="disabled">Wednesday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="premiumDays" value="Thursday" />
+                                                                <label class="form-check-label"
+                                                                    for="disabled-checked">Thursday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="premiumDays" value="Friday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Friday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="premiumDays" value="Saturday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Saturday</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    name="premiumDays" value="Sunday" />
+                                                                <label class="form-check-label"
+                                                                    for="manga">Sunday</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group"><label for="name">Daily Class
+                                                                Duration</label>
+                                                            <div class=" d-flex">
+
+                                                                <input type="text" class="form-control me-2" id="name"
+                                                                    placeholder="Hours" name="premiumHours">
+                                                                <input type="text" class="form-control" id="name"
+                                                                    placeholder="Minuts " name="premiumMinuts">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <section class="app">
+                                                            <h3 class="gray-color">Extra Features</h3>
+                                                            <article class="feature1">
+                                                                <input type="checkbox" id="feature1" name="premiumChat" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Chat Support
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature2">
+                                                                <input type="checkbox" id="feature2" name="premiumExclusiveClass" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Exclusive Classes
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature3">
+                                                                <input type="checkbox" id="feature3" name="premiumStudyMetriels" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Study Metriels
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                            <article class="feature4">
+                                                                <input type="checkbox" id="feature4" name="premiumCertificates" value="true"/>
+                                                                <div>
+                                                                    <span>
+                                                                        Certificates
+                                                                    </span>
+                                                                </div>
+                                                            </article>
+
+                                                        </section>
+
+                                                        <div class="form-group">
+                                                            <div class="row justify-content-between"><label
+                                                                    for="description"
+                                                                    class="col-md-5">Description</label>
+                                                            </div>
+                                                            <textarea id="description" class="form-control" name="premiumDescription"
+                                                                placeholder="Provide a detailed description of your Premium Plan"></textarea>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                         <div class="mt-5">
+                                             <div class="card">
+                                <div class="card-body">
+                                    <h3>Gallary</h3>
+                                    <div class="dropzone-wrap">
+                                        <label for="">Banner Image</label>
+                                        <div class="dropzone"><input type="file" name="bannerImage"> <span class="upload-btn"><img
+                                                    src="images/icons-plus.svg" class="svg" alt=""></span></div>
+                                    </div>
+
+                                    <label class="mt-4" for="">Thumbnails</label>
+                                    <div class="d-flex" style="">
+                                        <div class="dropzone-wrap w-50 me-3 ">
+                                            <div class="dropzone"><input type="file" name="thumbnail1"> <span class="upload-btn"><img
+                                                        src="images/icons-plus.svg" class="svg" alt=""></span></div>
+                                        </div>
+                                        <div class="dropzone-wrap w-50 me-3">
+                                            <div class="dropzone"><input type="file" name="thumbnail2"> <span class="upload-btn"><img
+                                                        src="images/icons-plus.svg" class="svg" alt=""></span></div>
+                                        </div>
+
+                                        <div class="dropzone-wrap w-50">
+                                            <div class="dropzone"><input type="file" name="thumbnail3"> <span class="upload-btn"><img
+                                                        src="images/icons-plus.svg" class="svg" alt=""></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                            <div class="form-group d-flex justify-content-end pt-2 mb-5 me-5"><button
+                                                    class="btn" type="submit"><img src="images/icons-btn-save.svg"
+                                                        alt="" class="svg">
+                                                    Create Now</button></div>
+                            </div>
+
+                                  
+                                  </div>
+                            
+                                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+       <a href="#" class="back-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
+        <script src="js/js-jquery.min.js"></script>
+        <script src="js/js-bootstrap.bundle.min.js"></script>
+        <script src="js/particles-particles.min.js"></script>
+        <script src="js/js-menu.min.js"></script>
+        <script src="js/swiper-swiper-bundle.min.js"></script>
+        <script src="js/magnific-popup-jquery.magnific-popup.min.js"></script>
+        <script src="js/countdown-countdown.min.js"></script>
+        <script src="js/nice-select-jquery.nice-select.min.js"></script>
+        <script src="js/Isotope-isotope.pkgd.js"></script>
+        <script src="js/counterup-waypoints.min.js"></script>
+        <script src="js/counterup-jquery.counterup.min.js"></script>
+        <script src="js/js-main.js"></script>
+        <script src="js/js-custom.js"></script>
+
+        <script src="//cdn.jsdelivr.net/npm/vue@2.7.9/dist/vue.js"></script>
+        <script src="//unpkg.com/element-ui@2.15.6/lib/index.js"></script>
+
+
+
+
+        <style>
+            .app {
+                max-width: 300%;
+                margin: 0 auto;
+                margin-bottom: 15%;
+            }
+
+
+
+            article {
+                position: relative;
+                width: 140px;
+                height: 100px;
+                margin: 5px;
+                float: left;
+                border: 2px solid #133575;
+                box-sizing: border-box;
+            }
+
+            article div {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 25px;
+                transition: .5s ease;
+            }
+
+            article input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 140px;
+                height: 100px;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            input[type=checkbox]:checked~div {
+                background-color: #071838;
+            }
+
+            .upgrade-btn {
+                display: block;
+                margin: 30px auto;
+                width: 200px;
+                padding: 10px 20px;
+                border: 2px solid #50bcf2;
+                border-radius: 50px;
+                color: #f5f5f5;
+                font-size: 18px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: .3s ease;
+            }
+
+            .upgrade-btn:hover {
+                background-color: #50bcf2;
+            }
+
+            .blue-color {
+                color: #50bcf2;
+            }
+
+            .gray-color {
+                color: #555;
+            }
+
+            .social i:before {
+                width: 14px;
+                height: 14px;
+                position: fixed;
+                color: #fff;
+                background: #0077B5;
+                padding: 10px;
+                border-radius: 50%;
+                top: 5px;
+                right: 5px;
+            }
+
+            @keyframes slidein {
+                from {
+                    margin-top: 100%;
+                    width: 300%;
+                }
+
+                to {
+                    margin: 0%;
+                    width: 100%;
+                }
+            }
+
+
+
+
+            /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+            /* Rounded tabs */
+
+            @media (min-width: 576px) {
+                .rounded-nav {
+                    border-radius: 50rem !important;
+                }
+            }
+
+            @media (min-width: 576px) {
+                .rounded-nav .nav-link {
+                    border-radius: 50rem !important;
+                }
+            }
+
+            /* With arrow tabs */
+
+            .with-arrow .nav-link.active {
+                position: relative;
+            }
+
+            .with-arrow .nav-link.active::after {
+                content: '';
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #2b90d9;
+                position: absolute;
+                bottom: -6px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
+
+            /* lined tabs */
+
+            .lined .nav-link {
+                border: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .lined .nav-link:hover {
+                border: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .lined .nav-link.active {
+                background: none;
+                color: #555;
+                border-color: #2b90d9;
+            }
+
+            /*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+            .nav-pills .nav-link {
+                color: #555;
+            }
+
+            .text-uppercase {
+                letter-spacing: 0.1em;
+            }
+
+                {
+                    {
+                     !-- checkbox dot --
+                }
+                
+            }
+
+            #myTab2 li:hover{
+                color: #555;
+            }
+        </style>
+
+        <script>
+
+            let category;
+            let categoryId;
+            let parentCategory;
+
+            window.onload = async function () {
+                await jQuery.ajax({
+                    url: "/admin/category",
+                    type: 'POST',
+                    success: function (data) {
+                        category = data
+                    },
+                    error: function () {
+                        console.log('error')
+                    }
+                })
+
+
+                parentCategory = category.filter((value) => {
+                    if (value.parent === 0) return value;
+
+                })
+
+                parentCategory.forEach((value) => {
+
+                    $('#brow').append(`<option value="${value.text}">
+
+                                  </option>`);
+                })
+
+            };
+
+            function listSubCategory() {
+                let categoryInput = document.getElementById('main-category').value
+                let subDiv = document.getElementById('sub-div')
+                subDiv.setAttribute('hidden', '')
+                document.getElementById("sub").innerHTML = "";
+                category.forEach((value) => {
+
+                    if (categoryInput == value.text) {
+                        categoryId = value.id
+                        category.forEach((element) => {
+                            if (categoryId == element.parent) {
+                                subDiv.removeAttribute('hidden')
+                                $('#sub').append(`<option value="${element.text}">
+                                  </option>`);
+                            }
+                        })
+
+                    }
+
+                })
+
+
+
+            }
+
+
+            let elem = document.querySelector('#topic');
+            const addTopicDiv = document.getElementById('add-topic-div')
+
+            function listTopics() {
+                document.getElementById('topicLabel').setAttribute('hidden', '')
+                let subInput = document.getElementById("sub-category").value
+                let subCategoryId;
+                addTopicDiv.innerHTML = ''
+                category.forEach((element) => {
+
+                    if (subInput == element.text) {
+                        subCategoryId = element.id
+                    }
+
+                })
+
+                category.forEach((element) => {
+                    if (element.parentPath.includes(subCategoryId)) {
+                        document.getElementById('topicLabel').removeAttribute('hidden')
+
+                        let clone = elem.cloneNode(true);
+
+
+                        clone.id = "topic" + element.id;
+                        elem.parentElement.insertBefore(clone, elem.parentElement.children[elem.parentElement.length - 1]);
+                        let label = clone.querySelector("label")
+                        let input = clone.querySelector("input")
+                        input.setAttribute('value',element.id)
+                        label.innerHTML = element.text
+                        addTopicDiv.appendChild(clone);
+                    }
+
+                })
+
+            }
+
+        </script>
+
+        <script>
+            const basicLi = document.getElementById("basic-li");
+            const standardLi = document.getElementById("standard-li");
+            const premiumLi = document.getElementById("premium-li");
+            const basic = document.getElementById("basic");
+            const standard = document.getElementById("standard");
+            const premium = document.getElementById("premium");
+            function next1() {
+                console.log("next1");
+                standardLi.classList.remove("active");
+                premiumLi.classList.remove("active");
+                basicLi.classList.add("active");
+
+                standard.classList.remove("active");
+                standard.classList.remove("show");
+                premium.classList.remove("active");
+                premium.classList.remove("show");
+                basic.classList.add("active");
+                basic.classList.add("show");
+
+            }
+
+            function next2() {
+                console.log('next2')
+                premiumLi.classList.remove("active");
+                basicLi.classList.remove("active");
+                standardLi.classList.add("active");
+
+                basic.classList.remove("active");
+                basic.classList.remove("show");
+                premium.classList.remove("active");
+                premium.classList.remove("show");
+                standard.classList.add("active");
+                standard.classList.add("show");
+            }
+
+            function next3() {
+                console.log('next3')
+
+                standardLi.classList.remove("active");
+                basicLi.classList.remove("active");
+                premiumLi.classList.add("active");
+
+                standard.classList.remove("active");
+                standard.classList.remove("show");
+                basic.classList.remove("active");
+                basic.classList.remove("show");
+                premium.classList.add("active");
+                premium.classList.add("show");
+            }
+        </script>
+
+</body>
+
+</html>
